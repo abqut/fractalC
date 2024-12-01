@@ -17,7 +17,7 @@ Users may add their own functions to study their behaviour using the image gener
 
 ### Installing
 
-* Download the repository and run 'make' to build.
+* Download the repository, create a directory named 'obj' and run 'make' to build.
 * All paths are relative by default and the structure of the repo is assumed.
 
 ### Executing program
