@@ -24,6 +24,6 @@ Users may add their own functions to study their behaviour using the image gener
 
 * There is no gui or commandline interface by default. The main.c file currently defines the behaviour of the programm.
 
-### Credits
+## Credits
 
 * Checkout all other stb libraries: https://github.com/nothings/stb
