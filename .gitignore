@@ -4,3 +4,4 @@ results
 basicConfigs.txt
 obj/*.o
 *.exe
+*.PNG

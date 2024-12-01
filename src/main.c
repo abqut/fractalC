@@ -26,8 +26,8 @@ char *generateFractalPathMandelbrot(fractalRun run){
 
 int main() {
     //Example usage of the program which generates a PNG of a julia set.
-    const int width = 1000;
-    const int height = 1000;
+    const int width = 10000;
+    const int height = 10000;
 
     float yr[10] = {0, 112, 160, 206, 239, 255, 255, 255, 255, 255};
     float ygg[10] = {0, 0, 0, 0, 52, 97, 140, 179, 255, 255};
@@ -46,8 +46,8 @@ int main() {
         .R = R,
         .B = B,
         .G = G,
-        .it = julia,
-        .maxIt = 1000,
+        .it = mandelbrot,
+        .maxIt = 800,
         .xmin = -1.5,
         .xmax = 1.5,
         .ymin = -1.5,
@@ -55,7 +55,7 @@ int main() {
         .xs = &x[0],
         .length = 10};
 
-    path = generateFractalPathJulia(runPNG);
+    path = generateFractalPathMandelbrot(runPNG);
     clock_t begin = clock();
 
     image *test = compute(runPNG);

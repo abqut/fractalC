@@ -35,18 +35,16 @@ image *compute(fractalRun run) {
         blu[du] = (int)(evalSpline(run.B, run.xs, val, run.length));
     }
 
-    int i, j;
     long prog, tenth;
     //Step sizes
     const long double x_inc = (run.xmax - run.xmin) / run.width;
     const long double y_inc = (run.ymax - run.ymin) / run.height;
-    j = 0;
     prog = 0;
     tenth = 1;
 
 
-#pragma omp parallel for ordered
-    for (i = 0; i < run.width * run.height; i++) {
+#pragma omp parallel for 
+    for (int i = 0; i < run.width * run.height; i++) {
         const long double x = i % run.width;
         const long double y = floor(i / run.width);
         const long double u = x * x_inc + run.xmin;
@@ -60,13 +58,10 @@ image *compute(fractalRun run) {
             tenth++;
         }
         prog++;
-#pragma omp ordered
+        const int j = 3 * i;
         im->pixels[j] = (char)red[it];
-        j++;
-        im->pixels[j] = (char)gre[it];
-        j++;
-        im->pixels[j] = (char)blu[it];
-        j++;
+        im->pixels[j + 1] = (char)gre[it];
+        im->pixels[j + 2] = (char)blu[it];
     }
     free(red);
     free(gre);
