@@ -1,49 +1,6 @@
-colors.py
+.vscode
+old
+results
 basicConfigs.txt
-cspell.json
-ficCubic.code-workspace
-julia7000x7000_0.285000_0.010000_500it
-juliaFun.exe
-Mandeltest.ppm
-structTest.exe
-test.exe
-tester.c
-testOp.c
-weird.exe
-.vscode/launch.json
-.vscode/settings.json
-.vscode/tasks.json
-executables copy/debugInt.exe
-executables copy/finprog.exe
-executables copy/go.exe
-executables copy/pog.exe
-executables copy/gotest.exe
-executables copy/pogitworksq.exe
-executables copy/pogTest.exe
-executables copy/sketch.fdb_latexmk
-executables copy/sketch.aux
-executables copy/sketch.fls
-executables copy/sketch.log
-executables copy/sketch.pdf
-executables copy/sketch.synctex.gz
-executables copy/tester.exe
-executables copy/sketch.Tex
-results/1.ppm
-results/aaaaaasaaaaaaaaaa.ppm
-results/aaaaaasasdasdaadasdassaaaaaaaaaa.ppm
-results/aaaaaasasdasdasaaaaaaaaaa.ppm
-results/debugIntP.ppm
-results/Mandeltest.ppm
-old/oldComp.c
-old/main.c
-results/debugIntP1.ppm
-results/pgmimg.pgm
-results/test.pgm
-results/test.ppm
-results/testF.ppm
-results/testThreads.ppm
-results/testinmg.ppm
-results/testThreadsAndCub.ppm
-results/YAAAAY.ppm
-vecLib/vec2f.c
-vecLib/vec2f.h
+obj/*.o
+*.exe

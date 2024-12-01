@@ -4,13 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float powi(float b, int p) {
-    float res = b;
-    for (int i = 1; i < p; i++) {
-        res = res * b;
-    }
-    return res;
-}
 
 float fastPow(float b, int p){
     if(p == 0){
@@ -186,6 +179,8 @@ float evalSpline(Polynomial* Spline, float* xs, float x, int length) {
             return (eval(Spline[i], t));
         }
     }
+    fprintf(stderr, "ERROR: Spline input out of bounds.");
+    return -1;
 }
 
 void freePolyPtr(Polynomial* ptr) {
