@@ -25,7 +25,7 @@ char *generateFractalPathMandelbrot(fractalRun run){
 }
 
 int main() {
-    //Example usage of the program which generates a PNG of a julia set.
+    //Example usage of the program which generates a PNG of the Mandelbrot set.
     const int width = 10000;
     const int height = 10000;
 
