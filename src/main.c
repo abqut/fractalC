@@ -26,33 +26,33 @@ char *generateFractalPathMandelbrot(fractalRun run){
 
 int main() {
     //Example usage of the program which generates a PNG of a julia set.
-    const int width = 10000;
-    const int height = 10000;
+    const int width = 2500;
+    const int height = 2200;
 
-    float yr[10] = {0, 112, 160, 206, 239, 255, 255, 255, 255, 255};
-    float ygg[10] = {0, 0, 0, 0, 52, 97, 140, 179, 255, 255};
-    float yb[10] = {0, 136, 72, 0, 0, 0, 0, 0, 0, 255};
-    float x[10] = {0, 0.1111, 0.2222, 0.3333, 0.4444, 0.5555, 0.6666, 0.7777, 0.8888, 1.0001};
+    //Wikipedia inspired color gradient
+    float wikiRed[] = {0, 32, 237, 255, 0, 0};
+    float wikiGreen[] = {7, 107, 255, 170, 2, 2};
+    float wikiBlue[] = {100, 203, 255, 0, 0, 20};
+    float wikiX[] = {0, 0.16, 0.42, 0.6425, 0.8575, 1.0001};
 
-    Polynomial *R = monCubIn(x, yr, 10);
-    Polynomial *G = monCubIn(x, ygg, 10);
-    Polynomial *B = monCubIn(x, yb, 10);
-
+    Polynomial *wikiR = monCubIn(wikiX, wikiRed, 6);
+    Polynomial *wikiG = monCubIn(wikiX, wikiGreen, 6);
+    Polynomial *wikiB = monCubIn(wikiX, wikiBlue, 6);
     char* path;
 
     fractalRun runPNG = {
         .width = width,
         .height = height,
-        .R = R,
-        .B = B,
-        .G = G,
+        .R = wikiR,
+        .B = wikiB,
+        .G = wikiG,
         .it = mandelbrot,
-        .maxIt = 800,
-        .xmin = -1.5,
-        .xmax = 1.5,
-        .ymin = -1.5,
-        .ymax = 1.5,
-        .xs = &x[0],
+        .maxIt = 1024,
+        .xmin = -1.9,
+        .xmax = 0.6,
+        .ymin = -1.1,
+        .ymax = 1.1,
+        .xs = &wikiX[0],
         .length = 10};
 
     path = generateFractalPathMandelbrot(runPNG);
@@ -72,9 +72,9 @@ int main() {
     }
     free(test->pixels);
     free(test);
-    freeSpline(R, 10);
-    freeSpline(G, 10);
-    freeSpline(B, 10);
+    freeSpline(wikiR, 6);
+    freeSpline(wikiG, 6);
+    freeSpline(wikiB, 6);   
 
     return 0;
 }

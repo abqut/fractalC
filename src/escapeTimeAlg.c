@@ -29,7 +29,7 @@ image *compute(fractalRun run) {
     //Construct colorgradient array using the splines passed to the function
     for (int du = 0; du <= run.maxIt; du++) {
         float fd = (float)du;
-        float val = fd / fx;
+        float val = pow(fd / fx, 0.5); //Gamma correction
         red[du] = (int)(evalSpline(run.R, run.xs, val, run.length));
         gre[du] = (int)(evalSpline(run.G, run.xs, val, run.length));
         blu[du] = (int)(evalSpline(run.B, run.xs, val, run.length));
